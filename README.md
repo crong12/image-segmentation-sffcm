@@ -10,10 +10,7 @@
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Cloning this repository](#cloning-this-repository)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-- [Acknowledgments](#acknowledgments)
+- [References](#references)
 
 ## About the Project
 
@@ -23,35 +20,37 @@ While exploring the literature in search of a suitable algorithm, I discovered t
 
 A brief report may be found in the [coursework write-up](./Coursework_write-up_Chin%20Rong%20Ong.pdf). More details on the SFFCM algorithm may be found in the [original paper](https://ieeexplore.ieee.org/document/8584141) by Lei and colleagues.
 
+This repo also contains code I wrote for hyperparameter tuning - namely the number of clusters and number of structure elements. All other hyperparameters (number of iterations, convergence criterion, etc.) were used as is. Although Lei and colleagues recommended a minimal SE of 2, interestingly, I found from my experiments that an SE of 4 tended to perform better on average (in terms of average F1 score across all 12 images).
+
 ### Sample output:
 ![sample output](./output/best_performance.jpg)
+*Hyperparameters used: 3 clusters and 2 structure elements. This was the best performance observed across all tested hyperparameters and all training images.*
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Directory Structure
-
+```
 image-segmentation-sffcm/
 ├── +eval_code/                 # code for evaluation of algorithm on images
 ├── +fcm_algo/                  # source code for sffcm algorithm
 ├── output/                     # output images, tables, etc.
 ├── training_images/            # training images and human-labelled boundaries
-├── sample_images/              # sample images for testing of algorithm (unlabelled)
+├── sample_images/              # sample images for testing of algorithm
 ├── hyperparameter_tuning.mlx   # script for hyperparameter tuning
 ├── license.txt                 # license file
 ├── main.mlx                    # script for running algorithm
 └── README.md                   # this file
-
+```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Getting Started
-
 ### Prerequisites
 
 - [MATLAB](https://uk.mathworks.com/products/matlab.html) 
 
 ### Cloning this repository
 
-To get a local copy of the project, follow these steps:
+To get a local copy of this project, follow these steps:
 
 1. Open your terminal or command prompt.
 2. Navigate to the directory where you want to clone the repository.
@@ -63,14 +62,10 @@ To get a local copy of the project, follow these steps:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## License
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## Acknowledgments
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 ## References
+
+T. Lei, X. Jia, Y. Zhang, S. Liu, H. Meng and A. K. Nandi, "Superpixel-Based Fast Fuzzy C-Means 
+Clustering for Color Image Segmentation," in IEEE Transactions on Fuzzy Systems, vol. 27, no. 9, pp. 
+1753-1766, Sept. 2019, doi: 10.1109/TFUZZ.2018.2889018. 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
