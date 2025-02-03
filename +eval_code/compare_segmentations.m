@@ -12,7 +12,7 @@ imFile=[ImDir,'im',int2str(imNum),'.jpg'];
 I=im2double(imread(imFile));
 
 %segment image
-segPred=segment_image(I, cluster, se); %<<<<<< calls your method for image segmentation
+segPred=fcm_algo.segment_image(I, cluster, se); %<<<<<< calls your method for image segmentation
 
 %convert segmentation to a boundary map, if necessary
 segPred=round(segPred);
