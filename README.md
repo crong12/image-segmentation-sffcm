@@ -10,6 +10,8 @@
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Cloning this repository](#cloning-this-repository)
+  - [Usage](#usage)
+- [Takeaways](#takeaways)
 - [References](#references)
 
 ## About the Project
@@ -21,6 +23,8 @@ While exploring the literature in search of a suitable algorithm, I discovered t
 A brief report may be found in the [coursework write-up](./Coursework_write-up_Chin%20Rong%20Ong.pdf). More details on the SFFCM algorithm may be found in the [original paper](https://ieeexplore.ieee.org/document/8584141) by Lei and colleagues.
 
 This repo also contains code I wrote for hyperparameter tuning - namely the number of clusters and number of structure elements. All other hyperparameters (number of iterations, convergence criterion, etc.) were used as is. Although Lei and colleagues recommended a minimal SE of 2, interestingly, I found from my experiments that an SE of 4 tended to perform better on average (in terms of average F1 score across all 12 images).
+
+This project received a final grade of 95%.
 
 ### Sample output:
 ![sample output](./output/best_performance.jpg)
@@ -46,7 +50,7 @@ image-segmentation-sffcm/
 ## Getting Started
 ### Prerequisites
 
-- [MATLAB](https://uk.mathworks.com/products/matlab.html) 
+- [MATLAB](https://uk.mathworks.com/products/matlab.html) (version used: R2024b)
 
 ### Cloning this repository
 
@@ -59,6 +63,14 @@ To get a local copy of this project, follow these steps:
    ```bash
    git clone https://github.com/crong12/image-segmentation-sffcm.git
    ```
+
+### Usage
+
+- In MATLAB, navigate to the project directory. 
+- Open the `main.mlx` script.
+  - The first code block sets hyperparameters - number of clusters and structure elements. Feel free to play around with these values to see how they affect performance.
+  - The second code block in this script will output the image segmentation result for a given image. To try this with another image, edit `imFile` with another image in the `sample_images/` subdirectory, or upload your own.
+  - The third code block in this script will evaluate this algorithm for all training images by comparing generated boundaries to ground-truth boundaries to obtain an f1-score for each image.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
